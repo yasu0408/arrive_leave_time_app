@@ -1,7 +1,6 @@
 class ReceptionsController < ApplicationController
   def index
-    user = User.new
-    @my_introduce = user.introduce
+    @receptions = Reception.order(id: :asc)
   end
 
   def show

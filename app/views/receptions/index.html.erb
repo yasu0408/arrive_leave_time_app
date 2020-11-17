@@ -1,3 +1,27 @@
-<%= @greet %>
-<!-- @my_introduceのデータを表示 -->
-<%= simple_format (@my_introduce) %>
+<h1>今日のメンバー</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">なまえ</th>
+      <th scope="col">きたじかん</th>
+      <th scope="col">かえるじかん</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @receptions.each.with_index(1) do |reception, i| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= reception.name %></td>
+        <td><%= reception.arrive %></td>
+        <td><%= reception.leave %></td>
+        <td>
+          <%= link_to "詳細", reception %>
+          <%= link_to "編集", edit_reception_path(reception) %>
+          <%= link_to "削除", reception, method: :delete, data: { confirm: "削除しますか?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
