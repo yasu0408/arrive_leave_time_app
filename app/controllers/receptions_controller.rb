@@ -5,6 +5,7 @@ class ReceptionsController < ApplicationController
   end
 
   def show
+    @reception = Reception.find(params[:id])
   end
 
   def new
@@ -28,6 +29,6 @@ class ReceptionsController < ApplicationController
   private
 
   def reception_params
-    params.require(:post).permit(:name, :arrive, :leave)
+    params.require(:reception).permit(:name, :arrive, :leave)
   end
 end
