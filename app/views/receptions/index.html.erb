@@ -14,8 +14,8 @@
       <tr>
         <th scope="row"><%= i %></th>
         <td><%= reception.name %></td>
-        <td><%= reception.arrive %></td>
-        <td><%= reception.leave %></td>
+        <td><%=l reception.arrive%></td>
+        <td><%=l reception.leave %></td>
         <td>
           <%= link_to "詳細", reception %>
           <%= link_to "編集", edit_reception_path(reception) %>
