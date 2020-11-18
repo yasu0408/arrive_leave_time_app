@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ div.field_with_errors {
+   display: contents;
+   input,#reception_leave_5i,#reception_leave_4i {
+     border: 2px solid red;
+   }
+ }

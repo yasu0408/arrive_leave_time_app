@@ -13,16 +13,25 @@ class ReceptionsController < ApplicationController
   end
 
   def create
-    reception = Reception.create!(reception_params)
-    redirect_to reception, notice: "とうこうしました"
+    @reception = Reception.new(reception_params)
+    if @reception.save
+      redirect_to @reception, notice: "とうこうしました"
+    else
+      flash.now[:alert] = "とうこうにしっぱいしました"
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @reception.update!(reception_params)
-    redirect_to @reception, notice: "こうしんしました"
+    if @reception.update(reception_params)
+      redirect_to @reception, notice: "こうしんしました"
+    else
+      flash.now[:alert] = "こうしんにしっぱいしました"
+      render :edit
+    end
   end
 
   def destroy
