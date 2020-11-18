@@ -17,12 +17,19 @@ class ReceptionsController < ApplicationController
   end
 
   def edit
+    @reception = Reception.find(params[:id])
   end
 
   def update
+    reception = Reception.find(params[:id])
+    reception.update!(reception_params)
+    redirect_to reception
   end
 
   def destroy
+    reception = Reception.find(params[:id])
+    reception.destroy!
+    redirect_to root_path
   end
 
   private
