@@ -14,7 +14,7 @@ class ReceptionsController < ApplicationController
 
   def create
     reception = Reception.create!(reception_params)
-    redirect_to reception
+    redirect_to reception, notice: "とうこうしました"
   end
 
   def edit
@@ -22,12 +22,12 @@ class ReceptionsController < ApplicationController
 
   def update
     @reception.update!(reception_params)
-    redirect_to @reception
+    redirect_to @reception, notice: "こうしんしました"
   end
 
   def destroy
     @reception.destroy!
-    redirect_to root_path
+    redirect_to root_path, alert: "さくじょしました"
   end
 
   private
