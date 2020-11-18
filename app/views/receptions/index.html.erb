@@ -2,7 +2,7 @@
 <table>
   <thead>
     <tr>
-      <th scope="col">No.</th>
+      <th scope="col">ばんごう</th>
       <th scope="col">なまえ</th>
       <th scope="col">きたじかん</th>
       <th scope="col">かえるじかん</th>
@@ -17,9 +17,9 @@
         <td><%=l reception.arrive%></td>
         <td><%=l reception.leave %></td>
         <td>
-          <%= link_to "詳細", reception %>
-          <%= link_to "編集", edit_reception_path(reception) %>
-          <%= link_to "削除", reception, method: :delete, data: { confirm: "削除しますか?" } %>
+          <%= link_to "くわしく", reception %>
+          <%= link_to "へんこう", edit_reception_path(reception) %>
+          <%= link_to "さくじょ", reception, method: :delete, data: { confirm: "けしますか?" } %>
         </td>
       </tr>
     <% end %>
