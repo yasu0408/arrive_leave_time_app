@@ -1,10 +1,11 @@
 class ReceptionsController < ApplicationController
+  before_action :set_reception, only: %i[show edit update destroy]
+
   def index
     @receptions = Reception.order(id: :asc)
   end
 
   def show
-    @reception = Reception.find(params[:id])
   end
 
   def new
@@ -17,22 +18,23 @@ class ReceptionsController < ApplicationController
   end
 
   def edit
-    @reception = Reception.find(params[:id])
   end
 
   def update
-    reception = Reception.find(params[:id])
-    reception.update!(reception_params)
-    redirect_to reception
+    @reception.update!(reception_params)
+    redirect_to @reception
   end
 
   def destroy
-    reception = Reception.find(params[:id])
-    reception.destroy!
+    @reception.destroy!
     redirect_to root_path
   end
 
   private
+
+  def set_reception
+    @reception = Reception.find(params[:id])
+  end
 
   def reception_params
     params.require(:reception).permit(:name, :arrive, :leave)

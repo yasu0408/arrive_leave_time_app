@@ -1,18 +1,2 @@
 <h1>へんこう</h1>
-<%= form_with model: @reception, local: true do |form| %>
-  <div>
-    <%= form.label :name, "なまえ" %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :arrive, "きたじかん" %>
-    <%= form.time_select :arrive %>
-  </div>
-  <div>
-    <%= form.label :leave, "かえるじかん" %>
-    <%= form.time_select :leave %>
-  </div>
-  <div>
-    <%= form.submit "そうしん" %>
-  </div>
-<% end %>
+<%= render "form", button_value: "こうしん"%>
