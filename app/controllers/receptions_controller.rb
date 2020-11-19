@@ -14,6 +14,7 @@ class ReceptionsController < ApplicationController
 
   def create
     @reception = Reception.new(reception_params)
+    # binding.pry
     if @reception.save
       redirect_to @reception, notice: "とうこうしました"
     else
