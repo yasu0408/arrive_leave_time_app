@@ -28,10 +28,15 @@
 
  .base-container {
    @extend .container-fluid;
-   max-width: var(--breakpoint-lg);
+   max-width: var(--breakpoint-md);
    padding: 30px 15px;
  }
 
  body {
    padding-top: 56px;
+ }
+
+ .btn-primary {
+   background-color: #a0e3e6;
+   border-color: #a0e3e6;
  }
