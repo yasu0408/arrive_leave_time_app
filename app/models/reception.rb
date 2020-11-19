@@ -11,7 +11,7 @@ class Reception < ApplicationRecord
       errors.add(:arrive, blank_message)
     elsif self.leave.nil?
       errors.add(:leave, blank_message)
-    elsif arrive < leave
+    elsif arrive > leave
       errors.add(:leave, "かえるじかんがはやすぎます")
     end
   end
