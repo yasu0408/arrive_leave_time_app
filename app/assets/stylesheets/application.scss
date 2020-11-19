@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require flatpickr
  *= require_tree .
  *= require_self
  */
@@ -39,4 +40,14 @@
  .btn-primary {
    background-color: #a0e3e6;
    border-color: #a0e3e6;
+   .btn-primary:hover {
+     background-color: blue;
+     border: 1px solid blue;
+   }
+   .btn-primary:active {
+     background-color: blue;
+     border: 1px solid blue;
+   }
  }
+
+ 
