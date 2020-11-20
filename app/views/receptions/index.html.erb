@@ -1,6 +1,6 @@
-<h1>きょうのおともだち</h1>
-<table>
-  <thead>
+<h1 class="text-center">きょうのおともだち</h1>
+<table class="table table-bordered table-striped mt-4">
+  <thead class="table-primary text-nowrap text-center table-head">
     <tr>
       <th scope="col">ばんごう</th>
       <th scope="col">なまえ</th>
@@ -12,14 +12,20 @@
   <tbody>
     <% @receptions.each.with_index(1) do |reception, i| %>
       <tr>
-        <th scope="row"><%= i %></th>
-        <td><%= reception.name %></td>
-        <td><%=l reception.arrive%></td>
-        <td><%=l reception.leave %></td>
-        <td>
-          <%= link_to "くわしく", reception %>
-          <%= link_to "へんこう", edit_reception_path(reception) %>
-          <%= link_to "さくじょ", reception, method: :delete, data: { confirm: "けしますか?" } %>
+        <th scope="row" class="text-center"><%= i %></th>
+        <td class="break-word text-center text-nowrap"><%= reception.name %></td>
+        <td class="break-word text-center"><%= l reception.arrive %></td>
+        <td class="break-word text-center"><%= l reception.leave %></td>
+        <td class="text-nowrap">
+          <%= link_to reception, class: "btn btn-primary" do %>
+            <i class="fas fa-eye"></i> <span class="d-none d-md-inline"> くわしく</span>
+          <% end %>
+          <%= link_to edit_reception_path(reception), class: "btn btn-success" do %>
+            <i class="fas fa-exchange-alt"></i> <span class="d-none d-md-inline"> へんこう</span>
+          <% end %>
+          <%= link_to reception, method: :delete, data: { confirm: "削除しますか?" }, class: "btn btn-danger" do %>
+            <i class="fas fa-eraser"></i> <span class="d-none d-md-inline"> さくじょ</span>
+          <% end %>
         </td>
       </tr>
     <% end %>

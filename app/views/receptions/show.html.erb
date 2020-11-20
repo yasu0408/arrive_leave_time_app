@@ -1,5 +1,13 @@
-<h1>受付詳細</h1>
-<p>利用者氏名 <%= @reception.name %></p>
-<p>入所時刻 <%= l @reception.arrive %></p>
-<p>退所時刻 <%= l @reception.leave %></p>
-<%= link_to "利用者一覧に戻る", receptions_path %>
+<h1 class="text-center">利用者詳細</h1>
+<section class="card border-dark mt-5">
+  <div class="card-header">
+    <h4>利用者氏名：<%= @reception.name %></h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">入所時刻：<%= l @reception.arrive, format: :long %></p>
+  </div>
+  <div class="card-body">
+    <p class="card-text">退所時刻：<%= l @reception.leave, format: :long%></p>
+  </div>
+</section>
+<%= link_to "利用者一覧に戻る", receptions_path, class: 'btn btn-primary mt-3' %>

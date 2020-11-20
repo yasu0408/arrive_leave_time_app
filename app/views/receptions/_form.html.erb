@@ -1,18 +1,20 @@
 <%= render "layouts/error_messages" %>
 <%= form_with model: @reception, local: true do |form| %>
-  <div>
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control form-control-lg", require: true, maxlength:20 %>
   </div>
-  <div>
-    <%= form.label :arrive %>
-    <%= form.time_select :arrive %>
+  <div class="form-row">
+    <div class="form-group col">
+      <%= form.label :arrive %>
+      <%= form.text_field :arrive, class: "form-control form-control-lg input-time", rows: 10, require: true %>
+    </div>
+    <div class="form-group col">
+      <%= form.label :leave %>
+      <%= form.text_field :leave, class: "form-control form-control-lg input-time", rows: 10, require: true %>
+    </div>
   </div>
-  <div>
-    <%= form.label :leave %>
-    <%= form.time_select :leave %>
-  </div>
-  <div>
-    <%= form.submit button_value %>
-  </div>
+  <%= button_tag type: 'submit', class: "btn btn-primary btn-block btn-lg form-btn" do %>
+    そうしん <i class="fab fa-telegram-plane"></i>
+  <% end %>
 <% end %>

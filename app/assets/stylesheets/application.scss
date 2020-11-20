@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require flatpickr
  *= require_tree .
  *= require_self
  */
@@ -25,3 +26,75 @@
      border: 2px solid red;
    }
  }
+
+ .base-container {
+   @extend .container-fluid;
+   max-width: var(--breakpoint-md);
+   padding: 30px 15px;
+ }
+
+ body {
+   padding-top: 56px;
+ }
+
+ .form-btn {
+   background-color: #a0e3e6;
+   border-color: #a0e3e6;
+ }
+
+ .form-btn:hover {
+   background-color: #e0ffff;
+   border: 1px solid #e0ffff;
+   color : grey;
+ }
+
+ .form-btn:active {
+   background-color: #e0ffff;
+   border: 1px solid #e0ffff;
+ }
+
+ .table-head {
+   background-color:#e0ffff;
+ }
+
+ thead {
+   border: white;
+ }
+ 
+ th,
+ td {
+   vertical-align: middle !important;
+ }
+
+ .break-word {
+   word-break: break-word;
+ }
+
+ .alert-notice {
+   @extend .alert-success;
+ }
+
+ .alert-alert {
+   @extend .alert-danger;
+ }
+
+ .btn-primary {
+   background-color: #87cefa;
+   border: none;
+ }
+
+ .btn-success {
+   background-color: #90ee90;
+   border: none;
+ }
+
+ .btn-danger {
+   background-color: #ffc0cb;
+   border: none;
+ }
+
+ .table-primary th,.table-primary td,.table-primary thead th,
+ .table-primary tbody+tbody {
+   border-color: #f5f5f5;
+ }
+ 

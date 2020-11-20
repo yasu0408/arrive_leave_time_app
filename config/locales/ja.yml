@@ -5,9 +5,9 @@ ja:
       reception:
     attributes:
       reception:
-        name: なまえ
-        arrive: きたじかん
-        leave: かえるじかん
+        name: "なまえ"
+        arrive: "きたじかん"
+        leave: "かえるじかん"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -209,6 +209,6 @@ ja:
     am: 午前
     formats:
       default: "%H時%M分"
-      long: "%Y/%m/%d %H:%M"
+      long: "%Y年%m月%d日 %H時%M分"
       short: "%m/%d %H:%M"
     pm: 午後
