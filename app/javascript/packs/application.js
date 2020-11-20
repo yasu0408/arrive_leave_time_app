@@ -8,9 +8,9 @@ require("@fortawesome/fontawesome-free/js/all")
 const flatpickr = require("flatpickr/dist/flatpickr")
 
 document.addEventListener("turbolinks:load", () => {
-  flatpickr("#time", {
+  flatpickr(".input-time", {
     enableTime: true,
     noCalendar: true,
-    dateFormat: "H:i",
+    dateFormat: "K h：i",
   });
 })

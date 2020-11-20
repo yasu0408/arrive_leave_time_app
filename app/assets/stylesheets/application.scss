@@ -43,17 +43,18 @@
  }
 
  .form-btn:hover {
-   background-color: #87cefa;
-   border: 1px solid #87cefa;
+   background-color: #e0ffff;
+   border: 1px solid #e0ffff;
+   color : grey;
  }
 
  .form-btn:active {
-   background-color: #87cefa;
-   border: 1px solid #87cefa;
+   background-color: #e0ffff;
+   border: 1px solid #e0ffff;
  }
 
  .table-head {
-   background-color:#a0e3e6;
+   background-color:#e0ffff;
  }
 
  thead {
@@ -76,3 +77,24 @@
  .alert-alert {
    @extend .alert-danger;
  }
+
+ .btn-primary {
+   background-color: #87cefa;
+   border: none;
+ }
+
+ .btn-success {
+   background-color: #90ee90;
+   border: none;
+ }
+
+ .btn-danger {
+   background-color: #ffc0cb;
+   border: none;
+ }
+
+ .table-primary th,.table-primary td,.table-primary thead th,
+ .table-primary tbody+tbody {
+   border-color: #f5f5f5;
+ }
+ 
